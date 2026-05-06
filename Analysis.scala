@@ -44,4 +44,7 @@ val finalAnalysis = joined.withColumn("poverty_level",
 val result = finalAnalysis.groupBy("poverty_level")
   .agg(avg("od_rate").as("avg_overdose_rate"), count("*").as("records"))
 
+overdoseClean.show(10, false)
+acsFinal.show(10, false)
+joined.show(10, false)
 result.show(false)
